@@ -1,28 +1,49 @@
-import 'package:flutter/cupertino.dart';
 import 'package:instagram_clone_ui/model/post_model.dart';
 
 List<PostModel> getPosts() {
-  List<PostModel> posts = List<PostModel>.empty(growable: true);
+  List<PostModel> post = List<PostModel>.empty(growable: true);
   PostModel postModel;
   postModel = PostModel(
     profileName: 'leoMessi',
-    uploadedImage: AssetImage('assets/images/messi-profile.jpg'),
+    uploadedImage: 'assets/images/messi-profile.jpg',
   );
-  posts.add(postModel);
+  post.add(postModel);
   postModel = PostModel(
-    profileName: 'leoMessi',
-    uploadedImage: AssetImage('assets/images/messi-profile.jpg'),
+    profileName: 'rajeshdai',
+    uploadedImage: 'assets/images/rajesh-hamal.jpg',
   );
-  posts.add(postModel);
+  post.add(postModel);
   postModel = PostModel(
-    profileName: 'leoMessi',
-    uploadedImage: AssetImage('assets/images/messi-profile.jpg'),
+    profileName: 'ilovemomo',
+    uploadedImage: 'assets/images/momo.jpeg',
   );
-  posts.add(postModel);
+  post.add(postModel);
   postModel = PostModel(
-    profileName: 'leoMessi',
-    uploadedImage: AssetImage('assets/images/messi-profile.jpg'),
+    profileName: 'iamfoodie',
+    uploadedImage: 'assets/images/pizza.jpg',
   );
-  posts.add(postModel);
-  return posts;
+  post.add(postModel);
+  postModel = PostModel(
+    profileName: 'ronaldo',
+    uploadedImage: 'assets/images/ronaldo.jpg',
+  );
+  post.add(postModel);
+  postModel = PostModel(
+    profileName: 'animals',
+    uploadedImage: 'assets/images/tiger.jpg',
+  );
+
+  post.add(postModel);
+  postModel = PostModel(
+    profileName: 'gadgets',
+    uploadedImage: 'assets/images/macbook-pro.jpg',
+  );
+  post.add(postModel);
+  postModel = PostModel(
+    profileName: 'gadgets',
+    uploadedImage: 'assets/images/iphone12.jpg',
+  );
+  post.add(postModel);
+
+  return post;
 }

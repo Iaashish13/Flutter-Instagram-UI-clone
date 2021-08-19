@@ -12,45 +12,45 @@ List<StoryModel> getStories() {
   story.add(storyModel);
   storyModel = StoryModel(
       profileImage: AssetImage(
-        'assets/images/messi-profile.jpg'.toString(),
+        'assets/images/pizza.jpg'.toString(),
       ),
-      profileName: 'leoMessi');
+      profileName: 'pizza1');
   story.add(storyModel);
   storyModel = StoryModel(
       profileImage: AssetImage(
-        'assets/images/messi-profile.jpg'.toString(),
+        'assets/images/rajesh-hamal.jpg'.toString(),
       ),
-      profileName: 'leoMessi');
+      profileName: 'rajeshdai');
   story.add(storyModel);
   storyModel = StoryModel(
       profileImage: AssetImage(
-        'assets/images/messi-profile.jpg'.toString(),
+        'assets/images/momo.jpeg'.toString(),
       ),
-      profileName: 'leoMessi');
+      profileName: 'ilovemomo');
   story.add(storyModel);
   storyModel = StoryModel(
       profileImage: AssetImage(
-        'assets/images/messi-profile.jpg'.toString(),
+        'assets/images/ronaldo.jpg'.toString(),
       ),
-      profileName: 'leoMessi');
+      profileName: 'ronaldo');
   story.add(storyModel);
   storyModel = StoryModel(
       profileImage: AssetImage(
-        'assets/images/messi-profile.jpg'.toString(),
+        'assets/images/iphone12.jpg'.toString(),
       ),
-      profileName: 'leoMessi');
+      profileName: 'gadgets');
   story.add(storyModel);
   storyModel = StoryModel(
       profileImage: AssetImage(
-        'assets/images/messi-profile.jpg'.toString(),
+        'assets/images/pizza.jpg'.toString(),
       ),
-      profileName: 'leoMessi');
+      profileName: 'iamfoodie');
   story.add(storyModel);
   storyModel = StoryModel(
       profileImage: AssetImage(
-        'assets/images/messi-profile.jpg'.toString(),
+        'assets/images/tiger.jpg'.toString(),
       ),
-      profileName: 'leoMessi');
+      profileName: 'animals');
   story.add(storyModel);
   return story;
 }

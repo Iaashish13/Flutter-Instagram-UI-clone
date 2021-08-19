@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_clone_ui/constants/color_constants.dart';
 import 'package:instagram_clone_ui/model/insta_story.dart';
+import 'package:instagram_clone_ui/model/post_model.dart';
+import 'package:instagram_clone_ui/widgets/post_list.dart';
+import 'package:instagram_clone_ui/widgets/post_widget.dart';
 import 'package:instagram_clone_ui/widgets/stories_list.dart';
 import 'package:instagram_clone_ui/widgets/story_widget.dart';
 
@@ -13,10 +16,12 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   List<StoryModel> stories = List<StoryModel>.empty(growable: true);
+  List<PostModel> posts = List<PostModel>.empty(growable: true);
   @override
   void initState() {
     super.initState();
     stories = getStories();
+    posts = getPosts();
   }
 
   @override
@@ -68,163 +73,16 @@ class _HomeScreenState extends State<HomeScreen> {
               thickness: 1.0,
             ),
             Container(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Row(
-                    children: <Widget>[
-                      Container(
-                        padding: EdgeInsets.only(
-                          left: 18.0,
-                        ),
-                        child: CircleAvatar(
-                          radius: 16.0,
-                          backgroundImage:
-                              AssetImage('assets/images/insta-story.png'),
-                          child: CircleAvatar(
-                            radius: 13.0,
-                            backgroundImage:
-                                AssetImage('assets/images/messi-profile.jpg'),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 6.0,
-                      ),
-                      Text(
-                        'leoMessi',
-                      ),
-                      Spacer(),
-                      IconButton(
-                        onPressed: () {},
-                        icon: Icon(
-                          Icons.more_vert,
-                        ),
-                      ),
-                    ],
-                  ),
-                  Image.asset(
-                    'assets/images/messi-profile.jpg',
-                  ),
-                  Container(
-                    child: Row(
-                      children: <Widget>[
-                        IconButton(
-                          onPressed: () {},
-                          icon: Icon(
-                            Icons.favorite_border,
-                            size: 25.0,
-                          ),
-                        ),
-                        IconButton(
-                          onPressed: () {},
-                          icon: Image.asset('assets/images/comment1.png'),
-                        ),
-                        IconButton(
-                          onPressed: () {},
-                          icon: Image.asset(
-                            'assets/images/direct-message.png',
-                          ),
-                        ),
-                        Spacer(),
-                        IconButton(
-                          onPressed: () {},
-                          icon: Image.asset(
-                            'assets/images/save-icon.png',
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    padding: EdgeInsets.only(
-                      left: 16.0,
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        RichText(
-                          text: TextSpan(
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 12.0,
-                            ),
-                            children: [
-                              TextSpan(
-                                text: 'Liked by ',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w400,
-                                ),
-                              ),
-                              TextSpan(
-                                text: 'shulabhgrey14 ',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w700,
-                                ),
-                              ),
-                              TextSpan(
-                                text: 'and ',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w400,
-                                ),
-                              ),
-                              TextSpan(
-                                text: '123,456 others',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w700,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        SizedBox(
-                          height: 4.0,
-                        ),
-                        RichText(
-                          text: TextSpan(
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 12.0,
-                            ),
-                            children: [
-                              TextSpan(
-                                text: 'leoMessi ',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w700,
-                                ),
-                              ),
-                              TextSpan(
-                                text: 'And this is my first Instagram Post!! ',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w400,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        SizedBox(
-                          height: 4.0,
-                        ),
-                        RichText(
-                          text: TextSpan(
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 11.0,
-                            ),
-                            children: [
-                              TextSpan(
-                                text: 'View all 100 comments',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w200,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
+              child: ListView.builder(
+                physics: NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                itemCount: posts.length,
+                itemBuilder: (context, index) {
+                  return Postwidget(
+                    profileName: posts[index].profileName,
+                    uploadedImage: posts[index].uploadedImage.toString(),
+                  );
+                },
               ),
             ),
           ],
